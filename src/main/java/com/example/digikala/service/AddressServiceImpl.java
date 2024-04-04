@@ -38,7 +38,7 @@ public class AddressServiceImpl implements AddressService {
                         HttpStatus.NOT_FOUND,
                         ResourceBundleUtils.getExceptionMessage("address_not_found")
                 ));
-        return addressMapper.toDtos(addressEntity);
+        return addressMapper.toDto(addressEntity);
     }
 
 

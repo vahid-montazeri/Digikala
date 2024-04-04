@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
         Product productEntity = productRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, ResourceBundleUtils.getExceptionMessage("product_not_found")
         ));
-        return productMapper.toDtos(productEntity);
+        return productMapper.toDto(productEntity);
     }
 
     @Override

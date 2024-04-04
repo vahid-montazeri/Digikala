@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
       Order orderEntity  = orderRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, ResourceBundleUtils.getExceptionMessage("order_not_found")
       ));
-        return orderMapper.toDtos(orderEntity);
+        return orderMapper.toDto(orderEntity);
     }
 
 

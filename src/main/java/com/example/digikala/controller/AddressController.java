@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Address")
+@RequestMapping("addresses")
 @AllArgsConstructor
 
 public class AddressController {
@@ -37,20 +37,14 @@ public class AddressController {
     @PutMapping("{id}")
     public ResponseEntity<String> update(@PathVariable Long id, @RequestBody AddressDto addressDto) {
         addressService.update(id, addressDto);
-        return ResponseEntity.ok("Address With id" + id + "Update Successfully");
+        return ResponseEntity.ok("Address With id" + id + " update successfully");
     }
 
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id) {
         addressService.deleteById(id);
-        return ResponseEntity.ok("Address With id" + id + "Deleted Successfully");
-    }
-
-    @DeleteMapping
-    public ResponseEntity<Void> deleteAll() {
-        addressService.deleteAll();
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok("Address With id" + id + " deleted successfully");
     }
 
 }

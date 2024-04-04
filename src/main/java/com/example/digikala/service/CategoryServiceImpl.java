@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Transactional
     public void save(CategoryDto categoryDto) {
         Category categoryEntity = categoryMapper.toEntity(categoryDto);
-        categoryRepository.save(categoryEntity);
+        categoryRepository.saveAndFlush(categoryEntity);
 
     }
 
@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryDto getById(Long id) {
         Category categoryEntity = categoryRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, ResourceBundleUtils.getExceptionMessage("category_not_found")));
-        return categoryMapper.toDtos(categoryEntity);
+        return categoryMapper.toDto(categoryEntity);
 
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BaseMapper<E, D> {
 
-    D toDtos(E entity);
+    D toDto(E entity);
 
     E toEntity( D toDto);
 

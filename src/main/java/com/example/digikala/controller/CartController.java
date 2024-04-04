@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Card")
+@RequestMapping("carts")
 @AllArgsConstructor
 
 public class CartController {
@@ -41,7 +41,7 @@ public class CartController {
     @DeleteMapping(path = "{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id){
         cartService.deleteById(id);
-        return ResponseEntity.ok("Card with id" + id + "delete successfully");
+        return ResponseEntity.ok("Card with id" + id + " delete successfully");
 
     }
 }

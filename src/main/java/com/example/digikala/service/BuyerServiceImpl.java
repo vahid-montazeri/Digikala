@@ -35,7 +35,7 @@ public class BuyerServiceImpl implements BuyerService {
         Buyer buyerEntity = buyerRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
                 ResourceBundleUtils.getExceptionMessage("")));
-        return buyerMapper.toDtos(buyerEntity);
+        return buyerMapper.toDto(buyerEntity);
     }
 
     @Override

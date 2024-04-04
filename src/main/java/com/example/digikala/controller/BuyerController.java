@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Buyer")
+@RequestMapping("buyers")
 @AllArgsConstructor
 public class BuyerController {
     private BuyerService buyerService;
 
     @PostMapping
-
     public ResponseEntity<Void> creat(@RequestBody BuyerDto buyerDto) {
         buyerService.save(buyerDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -37,19 +36,13 @@ public class BuyerController {
     @PutMapping("{id}")
     public ResponseEntity<String> update(@PathVariable Long id, @RequestBody BuyerDto buyerDto) {
         buyerService.update(id, buyerDto);
-        return ResponseEntity.ok("Buyer With id" + id + "Update Successfully");
+        return ResponseEntity.ok("Buyer With id" + id + " update successfully");
     }
 
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id) {
         buyerService.deleteById(id);
-        return ResponseEntity.ok("Buyer With id" + id + "Deleted Successfully");
-    }
-
-    @DeleteMapping
-    public ResponseEntity<Void> deleteAll() {
-        buyerService.deleteAll();
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok("Buyer With id" + id + " deleted successfully");
     }
 }

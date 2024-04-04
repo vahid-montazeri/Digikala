@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Order")
+@RequestMapping("orders")
 @AllArgsConstructor
-
 public class OrderController {
 
     private OrderService orderService;
@@ -26,36 +25,27 @@ public class OrderController {
     }
 
     @GetMapping(path = "{id}")
-
     public ResponseEntity<OrderDto> getById(@PathVariable Long id) {
         OrderDto orderDto = orderService.getById(id);
         return new ResponseEntity<>(orderDto, HttpStatus.OK);
     }
 
     @GetMapping
-    @Transactional
     public ResponseEntity<List<OrderDto>> getAll() {
         List<OrderDto> orderServiceAll = orderService.getAll();
         return new ResponseEntity<>(orderServiceAll, HttpStatus.OK);
     }
 
     @PutMapping("{id}")
-    @Transactional
     public ResponseEntity<String> update(@PathVariable Long id, @RequestBody OrderDto orderDto) {
         orderService.update(id, orderDto);
-        return ResponseEntity.ok("Order With id" + id + "Update Successfully");
+        return ResponseEntity.ok("Order With id" + id + " update successfully");
     }
 
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id) {
         orderService.deleteById(id);
-        return ResponseEntity.ok("Order With id" + id + "Deleted Successfully");
-    }
-
-    @DeleteMapping
-    public ResponseEntity<Void> deleteAll() {
-        orderService.deleteAll();
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok("Order With id" + id + " deleted successfully");
     }
 }

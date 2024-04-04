@@ -10,12 +10,6 @@ public class DigikalaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DigikalaApplication.class, args);
-
-
     }
-
-
-
-
 
 }

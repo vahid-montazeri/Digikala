@@ -38,7 +38,7 @@ public class CartServiceImpl implements CartService {
                         HttpStatus.NOT_FOUND,
                         ResourceBundleUtils.getExceptionMessage("cart_not_found"))
                 );
-        return cartMapper.toDtos(cartEntity);
+        return cartMapper.toDto(cartEntity);
     }
 
     @Override

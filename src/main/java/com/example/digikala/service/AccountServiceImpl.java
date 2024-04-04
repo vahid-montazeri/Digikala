@@ -38,7 +38,7 @@ public class AccountServiceImpl implements AccountService {
                         HttpStatus.NOT_FOUND,
                         ResourceBundleUtils.getExceptionMessage("account_not_found")
                 ));
-        return accountMapper.toDtos(accountEntity);
+        return accountMapper.toDto(accountEntity);
     }
 
     @Override
