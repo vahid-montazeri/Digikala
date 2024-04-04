@@ -22,7 +22,7 @@ import java.util.Date;
 public class AbstractEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @CreatedDate
@@ -36,5 +36,10 @@ public class AbstractEntity {
 
     @LastModifiedBy
     private String modifiedBy;
+
+    @PrePersist
+    public void initialCreatedBy() {
+        setCreatedBy("Vahid Montazeri");
+    }
 
 }

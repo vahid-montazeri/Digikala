@@ -5,8 +5,6 @@ import com.example.digikala.entity.Product;
 import com.example.digikala.mapper.ProductMapper;
 import com.example.digikala.repository.ProductRepository;
 import com.example.digikala.util.ResourceBundleUtils;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,13 +13,16 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
 @Transactional
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository productRepository;
-    private ProductMapper productMapper;
+    private final ProductRepository productRepository;
+    private final ProductMapper productMapper;
+
+    public ProductServiceImpl(ProductRepository productRepository, ProductMapper productMapper) {
+        this.productRepository = productRepository;
+        this.productMapper = productMapper;
+    }
 
     @Override
     @Transactional
