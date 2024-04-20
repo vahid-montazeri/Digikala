@@ -1,6 +1,5 @@
 package com.example.digikala.dto;
 
-import com.example.digikala.entity.Buyer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,5 +16,5 @@ public class AddressDto extends AbstractDto {
     private String alley;
     private String houseNumber;
     private String postalCode;
-    private Buyer buyer;
+    private BuyerDto buyer;
 }

@@ -16,4 +16,7 @@ public interface ProductService {
     void deleteById(Long id);
 
     void deleteAll();
+
+    List<ProductDto> findAllByInStock(boolean inStock);
+
 }

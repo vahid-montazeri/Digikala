@@ -5,6 +5,7 @@ import com.example.digikala.entity.Product;
 import com.example.digikala.repository.CategoryRepository;
 import com.example.digikala.repository.ProductRepository;
 import com.github.javafaker.Faker;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,15 +17,11 @@ import java.util.Random;
 
 @SpringBootApplication
 @EnableJpaAuditing
+@RequiredArgsConstructor
 public class DigikalaApplication implements ApplicationRunner {
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
-
-    public DigikalaApplication(ProductRepository productRepository, CategoryRepository categoryRepository) {
-        this.productRepository = productRepository;
-        this.categoryRepository = categoryRepository;
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(DigikalaApplication.class, args);

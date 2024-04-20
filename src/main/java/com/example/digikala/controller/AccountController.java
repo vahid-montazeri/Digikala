@@ -5,6 +5,7 @@ import com.example.digikala.service.AccountService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class AccountController {
     private AccountService accountService;
 
     @PostMapping
-    public ResponseEntity<Void> creat(@RequestBody AccountDto accountDto) {
+    public ResponseEntity<Void> creat(@Validated @RequestBody AccountDto accountDto) {
         accountService.save(accountDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

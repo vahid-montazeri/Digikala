@@ -1,6 +1,5 @@
 package com.example.digikala.dto;
 
-import com.example.digikala.entity.Buyer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +14,5 @@ public class OrderDto extends AbstractDto {
 
     private Long priceProduct;
 
-    private Buyer buyer;
+    private BuyerDto buyer;
 }

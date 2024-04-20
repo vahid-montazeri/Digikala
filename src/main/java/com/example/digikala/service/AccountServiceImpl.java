@@ -43,10 +43,10 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public List<AccountDto> getAll() {
+    public List<AccountDto> getAll()  {
         List<Account> list = accountRepository.findAll();
-        return accountMapper.toDtos(list);
 
+        return accountMapper.toDtos(list);
     }
 
     @Override

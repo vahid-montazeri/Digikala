@@ -1,6 +1,5 @@
 package com.example.digikala.dto;
 
-import com.example.digikala.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +18,7 @@ public class ProductDto extends AbstractDto {
     // موجود در انبار
     private boolean inStock;
 
-    private Category category;
+//    @JsonIgnore
+    private CategoryDto category;
 
 }

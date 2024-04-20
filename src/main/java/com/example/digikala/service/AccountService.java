@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface AccountService {
 
-    void save(AccountDto accountDto);
+    void save(AccountDto accountDto) ;
 
     AccountDto getById(Long id);
 
-    List<AccountDto> getAll();
+    List<AccountDto> getAll() ;
 
     void update(Long id, AccountDto accountDto);
 

@@ -7,9 +7,7 @@ import lombok.Setter;
 
 import java.util.Date;
 
-@MappedSuperclass
-@Getter
-@Setter
+
 
 public class AbstractDto {
     private String id;

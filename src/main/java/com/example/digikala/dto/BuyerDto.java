@@ -1,6 +1,5 @@
 package com.example.digikala.dto;
 
-import com.example.digikala.entity.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,16 +19,16 @@ public class BuyerDto extends AbstractDto {
 
     private String email;
 
-    private List<Address> addresses;
+    private List<AddressDto> addresses;
 
     private String phoneNumber;
 
     private String nationalCode;
 
-    private List<Account> accounts;
+    private List<AccountDto> accounts;
 
-    private List<Order> orders;
+    private List<OrderDto> orders;
 
-    private List<Cart> carts;
+    private List<CartDto> carts;
 
 }

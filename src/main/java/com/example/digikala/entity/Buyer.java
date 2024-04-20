@@ -1,6 +1,8 @@
 package com.example.digikala.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +17,8 @@ import java.util.List;
 @Setter
 @Getter
 public class Buyer extends AbstractEntity {
-
+    @NotNull
+    @Size(max = 20)
     private String name;
 
     private String family;
